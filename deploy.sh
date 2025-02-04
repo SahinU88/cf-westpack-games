@@ -11,4 +11,4 @@ php artisan optimize:clear
 php artisan optimize
 
 ( flock -w 10 9 || exit 1
-    echo 'Restarting FPM...'; sudo -S service php8.2-fpm reload ) 9>/tmp/fpmlock
+    echo 'Restarting FPM...'; sudo -S service $FORGE_PHP_FPM reload ) 9>/tmp/fpmlock
