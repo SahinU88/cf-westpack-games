@@ -1,8 +1,21 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
+
+Route::get('logout', function(){
+        Auth::logout();
+
+        request()->session()->invalidate();
+
+        request()->session()->regenerateToken();
+
+        return redirect('/');
+    })
+    ->middleware(['auth'])
+    ->name('logout');
 
 Route::view('/confirmed', 'confirmed')
     ->middleware(['auth'])
