@@ -108,8 +108,8 @@ new #[Layout('layouts.guest')] class extends Component {
     <form wire:submit="register">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12">
             <div>
-                <h2 class="text-white text-base/7 font-semibold">Account</h2>
-                <p class="mt-1 text-sm/6">Your login credentials.</p>
+                <h2 class="text-white text-base/7 font-semibold">Konto</h2>
+                <p class="mt-1 text-sm/6">Deine Anmeldedaten.</p>
             </div>
             <div class="col-span-2">
                 <div class="space-y-6">
@@ -133,7 +133,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
                     <!-- Password -->
                     <div>
-                        <x-input-label for="password" :value="__('Password')" />
+                        <x-input-label for="password" :value="__('Passwort')" />
 
                         <x-text-input wire:model="password" id="password" class="block mt-1 w-full" type="password"
                             name="password" required autocomplete="new-password" />
@@ -143,7 +143,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
                     <!-- Confirm Password -->
                     <div>
-                        <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                        <x-input-label for="password_confirmation" :value="__('Passwort bestätigen')" />
 
                         <x-text-input wire:model="password_confirmation" id="password_confirmation"
                             class="block mt-1 w-full" type="password" name="password_confirmation" required
@@ -157,13 +157,13 @@ new #[Layout('layouts.guest')] class extends Component {
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12">
             <div>
-                <h2 class="text-white text-base/7 font-semibold">Division</h2>
-                <p class="mt-1 text-sm/6">Let us know how experienced you are.</p>
+                <h2 class="text-white text-base/7 font-semibold">Kategorie</h2>
+                <p class="mt-1 text-sm/6">Lass uns wissen, wie erfahren du bist.</p>
             </div>
             <div class="col-span-2">
                 <div class="grid grid-cols-1 gap-x-6 space-y-6">
                     <div>
-                        <x-input-label for="profile_birthday" :value="__('Birthday')" />
+                        <x-input-label for="profile_birthday" :value="__('Geburtstag')" />
                         <div class="mt-2 grid grid-cols-1">
                             <x-text-input wire:model="profile_birthday" id="profile_birthday" class="block mt-1 w-full"
                                 type="date" name="profile_birthday" required />
@@ -172,15 +172,16 @@ new #[Layout('layouts.guest')] class extends Component {
                     </div>
 
                     <div>
-                        <x-input-label for="profile_division" :value="__('Division')" />
+                        <x-input-label for="profile_division" :value="__('Workout Kategorie')" />
                         <div class="mt-2 grid grid-cols-1">
                             <select wire:model="profile_division" id="profile_division" name="profile_division"
                                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-xs"
                                 required>
+                                <option value="">Bitte wählen</option>
                                 <option value="rx">RX</option>
                                 <option value="scaled">Scaled</option>
                                 <option value="mixed">Mixed (Rx/Scaled)</option>
-                                <option value="null">Don't know 🤷</option>
+                                <option value="null">Unsicher</option>
                             </select>
                             <x-input-error :messages="$errors->get('profile_division')" class="mt-2" />
                         </div>
@@ -192,77 +193,99 @@ new #[Layout('layouts.guest')] class extends Component {
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <div>
                 <h2 class="text-white text-base/7 font-semibold">Skills</h2>
-                <p class="mt-1 text-sm/6">In the following questions, you can check whether you have the respective skills. It's not about how many repetitions you can do just if you can.</p>
+                <p class="mt-1 text-sm/6">Bei den folgenden Fragen kannst du ankreuzen, ob du die jeweiligen Fähigkeiten
+                    beherrscht. <br> Es geht nicht darum, wie viele Wiederholungen du machen kannst, sondern nur, ob du es
+                    kannst.</p>
             </div>
             <div class="col-span-2">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 md:gap-4">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_pull_ups" id="profile_can_do_pull_ups"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_pull_ups" />
-                        <x-input-label for="profile_can_do_pull_ups" :value="__('I can do Pull-Ups')" class="block text-sm/6 font-medium" />
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_do_pull_ups" />
+                        <x-input-label for="profile_can_do_pull_ups" :value="__('Pull-Ups')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_pull_ups')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_c2b_pull_ups" id="profile_can_do_c2b_pull_ups"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_c2b_pull_ups" />
-                        <x-input-label for="profile_can_do_c2b_pull_ups" :value="__('I can do Chest-To-Bar-Pull-Ups')" class="block text-sm/6 font-medium" />
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_do_c2b_pull_ups" />
+                        <x-input-label for="profile_can_do_c2b_pull_ups" :value="__('Chest-To-Bar-Pull-Ups')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_c2b_pull_ups')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_t2b" id="profile_can_do_t2b"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_t2b" />
-                        <x-input-label for="profile_can_do_t2b" :value="__('I can do Toes-To-Bar')" class="block text-sm/6 font-medium" />
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_do_t2b" />
+                        <x-input-label for="profile_can_do_t2b" :value="__('Toes-To-Bar')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_t2b')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_kipping_hspu" id="profile_can_do_kipping_hspu"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_kipping_hspu" />
-                        <x-input-label for="profile_can_do_kipping_hspu" :value="__('I can do Kipping Handstand Push-Ups')" class="block text-sm/6 font-medium" />
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_do_kipping_hspu" />
+                        <x-input-label for="profile_can_do_kipping_hspu" :value="__('Kipping Handstand Push-Ups')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_kipping_hspu')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_strict_hspu" id="profile_can_do_strict_hspu"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_strict_hspu" />
-                        <x-input-label for="profile_can_do_strict_hspu" :value="__('I can do Strict Handstand Push-Ups')" class="block text-sm/6 font-medium" />
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_do_strict_hspu" />
+                        <x-input-label for="profile_can_do_strict_hspu" :value="__('Strict Handstand Push-Ups')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_strict_hspu')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_wall_walks" id="profile_can_do_wall_walks"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_wall_walks" />
-                        <x-input-label for="profile_can_do_wall_walks" :value="__('I can do Wall Walks')" class="block text-sm/6 font-medium" />
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_do_wall_walks" />
+                        <x-input-label for="profile_can_do_wall_walks" :value="__('Wall Walks')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_wall_walks')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_hs_walks" id="profile_can_do_hs_walks"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_hs_walks" />
-                        <x-input-label for="profile_can_do_hs_walks" :value="__('I can do Handstand Walks')" class="block text-sm/6 font-medium" />
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_do_hs_walks" />
+                        <x-input-label for="profile_can_do_hs_walks" :value="__('Handstand Walks')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_hs_walks')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_bmu" id="profile_can_do_bmu"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_bmu" />
-                        <x-input-label for="profile_can_do_bmu" :value="__('I can do Bar Muscle-Ups')" class="block text-sm/6 font-medium" />
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_do_bmu" />
+                        <x-input-label for="profile_can_do_bmu" :value="__('Bar Muscle-Ups')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_bmu')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_rmu" id="profile_can_do_rmu"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_rmu" />
-                        <x-input-label for="profile_can_do_rmu" :value="__('I can do Ring Muscle-Ups')" class="block text-sm/6 font-medium" />
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_do_rmu" />
+                        <x-input-label for="profile_can_do_rmu" :value="__('Ring Muscle-Ups')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_rmu')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_dus" id="profile_can_do_dus"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_dus" />
-                        <x-input-label for="profile_can_do_dus" :value="__('I can do Double-Unders')" class="block text-sm/6 font-medium" />
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_do_dus" />
+                        <x-input-label for="profile_can_do_dus" :value="__('Double-Unders')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_dus')" class="mt-2" />
                     </div>
                 </div>
@@ -271,48 +294,57 @@ new #[Layout('layouts.guest')] class extends Component {
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <div>
-                <h2 class="text-white text-base/7 font-semibold">Weights</h2>
-                <p class="mt-1 text-sm/6">An indication for your strength level.</p>
+                <h2 class="text-white text-base/7 font-semibold">Benchmarks</h2>
+                <p class="mt-1 text-sm/6">Ein Hinweis auf dein Kraftniveau.</p>
             </div>
             <div class="col-span-2">
                 <div class="grid grid-cols-1 md:grid-cols-2 space-y-6">
                     <div class="flex items-center gap-x-3">
-                        <x-text-input wire:model="profile_can_handle_rx_db_weight" id="profile_can_handle_rx_db_weight"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_handle_rx_db_weight" />
-                        <x-input-label for="profile_can_handle_rx_db_weight" :value="__('I can handle 2x 22,5/15KG Dumbbells')" class="block text-sm/6 font-medium" />
+                        <x-text-input wire:model="profile_can_handle_rx_db_weight"
+                            id="profile_can_handle_rx_db_weight"
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_handle_rx_db_weight" />
+                        <x-input-label for="profile_can_handle_rx_db_weight" :value="__('2x 22,5/15KG Dumbbells')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_handle_rx_db_weight')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center gap-x-3">
-                        <x-text-input wire:model="profile_can_handle_rx_wb_weight" id="profile_can_handle_rx_wb_weight"
-                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_handle_rx_wb_weight" />
-                        <x-input-label for="profile_can_handle_rx_wb_weight" :value="__('I can handle 9/6KG Wall Balls')" class="block text-sm/6 font-medium" />
+                        <x-text-input wire:model="profile_can_handle_rx_wb_weight"
+                            id="profile_can_handle_rx_wb_weight"
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            type="checkbox" name="profile_can_handle_rx_wb_weight" />
+                        <x-input-label for="profile_can_handle_rx_wb_weight" :value="__('9/6KG Wall Balls')"
+                            class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_handle_rx_wb_weight')" class="mt-2" />
                     </div>
 
                     <div class="col-span-2">
-                        <x-input-label for="profile_max_snatch" :value="__('Your max Snatch')" />
+                        <x-input-label for="profile_max_snatch" :value="__('Max Snatch')" />
                         <div class="mt-2">
-                            <x-text-input wire:model="profile_max_snatch" id="profile_max_snatch" class="block mt-1 w-full" type="number" min="1"
-                                name="profile_max_snatch" required />
+                            <x-text-input wire:model="profile_max_snatch" id="profile_max_snatch"
+                                class="block mt-1 w-full" type="number" min="1" name="profile_max_snatch"
+                                required />
                             <x-input-error :messages="$errors->get('profile_max_snatch')" class="mt-2" />
                         </div>
                     </div>
 
                     <div class="col-span-2">
-                        <x-input-label for="profile_max_clean" :value="__('Your max Clean')" />
+                        <x-input-label for="profile_max_clean" :value="__('Max Clean')" />
                         <div class="mt-2">
-                            <x-text-input wire:model="profile_max_clean" id="profile_max_clean" class="block mt-1 w-full" type="number" min="1"
-                                name="profile_max_clean" required />
+                            <x-text-input wire:model="profile_max_clean" id="profile_max_clean"
+                                class="block mt-1 w-full" type="number" min="1" name="profile_max_clean"
+                                required />
                             <x-input-error :messages="$errors->get('profile_max_clean')" class="mt-2" />
                         </div>
                     </div>
 
                     <div class="col-span-2">
-                        <x-input-label for="profile_max_deadlift" :value="__('Your max Deadlift')" />
+                        <x-input-label for="profile_max_deadlift" :value="__('Max Deadlift')" />
                         <div class="mt-2">
-                            <x-text-input wire:model="profile_max_deadlift" id="profile_max_deadlift" class="block mt-1 w-full" type="number" min="1"
-                                name="profile_max_deadlift" required />
+                            <x-text-input wire:model="profile_max_deadlift" id="profile_max_deadlift"
+                                class="block mt-1 w-full" type="number" min="1" name="profile_max_deadlift"
+                                required />
                             <x-input-error :messages="$errors->get('profile_max_deadlift')" class="mt-2" />
                         </div>
                     </div>
@@ -322,14 +354,15 @@ new #[Layout('layouts.guest')] class extends Component {
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <div>
-                <h2 class="text-white text-base/7 font-semibold">Issues</h2>
-                <p class="mt-1 text-sm/6">Anything we should know about.</p>
+                <h2 class="text-white text-base/7 font-semibold">Anmerkung</h2>
+                <p class="mt-1 text-sm/6">Gibt es etwas, das wir wissen sollten?</p>
             </div>
             <div class="col-span-2">
                 <div>
-                    <x-input-label for="profile_notes" :value="__('Let us know')" />
+                    <x-input-label for="profile_notes" :value="__('Lass es uns wissen')" />
                     <div class="mt-2">
-                        <textarea name="profile_notes" id="profile_notes" rows="3" class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-xs"></textarea>
+                        <textarea name="profile_notes" id="profile_notes" rows="3"
+                            class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-xs"></textarea>
                         <x-input-error :messages="$errors->get('profile_notes')" class="mt-2" />
                     </div>
                 </div>

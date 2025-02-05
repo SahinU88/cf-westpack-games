@@ -12,14 +12,14 @@
                     <div class="mx-auto text-center">
                         <div class="mb-8 flex justify-center">
                             <div class="relative rounded-full px-3 py-1 text-sm/6 text-white/50">
-                                Welcome to the Westpack Festspiele!
+                                Willkommen bei den Westpack Festspielen!
                             </div>
                         </div>
                         <h1 class="text-5xl font-semibold tracking-tight text-balance sm:text-7xl">
-                            Awesome! You're now registered.
+                            Awesome! Du bist jetzt registriert.
                         </h1>
                         <p class="mt-12 text-lg font-medium text-pretty sm:text-xl/8 text-white/75">
-                            Further information will follow shortly. Stay tuned!
+                            Weitere Informationen folgen in Kürze.
                         </p>
                     </div>
                 </div>
