@@ -175,7 +175,7 @@ new #[Layout('layouts.guest')] class extends Component {
                         <x-input-label for="profile_division" :value="__('Workout Kategorie')" />
                         <div class="mt-2 grid grid-cols-1">
                             <select wire:model="profile_division" id="profile_division" name="profile_division"
-                                class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-xs"
+                                class="border-gray-700 bg-gray-900 text-gray-300 focus:border-indigo-600 focus:ring-indigo-600 rounded-md shadow-xs"
                                 required>
                                 <option value="">Bitte wählen</option>
                                 <option value="rx">RX</option>
@@ -201,7 +201,7 @@ new #[Layout('layouts.guest')] class extends Component {
                 <div class="grid grid-cols-1 md:grid-cols-2 md:gap-4">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_pull_ups" id="profile_can_do_pull_ups"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_do_pull_ups" />
                         <x-input-label for="profile_can_do_pull_ups" :value="__('Pull-Ups')"
                             class="block text-sm/6 font-medium" />
@@ -210,7 +210,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_c2b_pull_ups" id="profile_can_do_c2b_pull_ups"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_do_c2b_pull_ups" />
                         <x-input-label for="profile_can_do_c2b_pull_ups" :value="__('Chest-To-Bar-Pull-Ups')"
                             class="block text-sm/6 font-medium" />
@@ -219,7 +219,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_t2b" id="profile_can_do_t2b"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_do_t2b" />
                         <x-input-label for="profile_can_do_t2b" :value="__('Toes-To-Bar')"
                             class="block text-sm/6 font-medium" />
@@ -228,7 +228,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_kipping_hspu" id="profile_can_do_kipping_hspu"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_do_kipping_hspu" />
                         <x-input-label for="profile_can_do_kipping_hspu" :value="__('Kipping Handstand Push-Ups')"
                             class="block text-sm/6 font-medium" />
@@ -237,7 +237,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_strict_hspu" id="profile_can_do_strict_hspu"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_do_strict_hspu" />
                         <x-input-label for="profile_can_do_strict_hspu" :value="__('Strict Handstand Push-Ups')"
                             class="block text-sm/6 font-medium" />
@@ -246,7 +246,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_wall_walks" id="profile_can_do_wall_walks"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_do_wall_walks" />
                         <x-input-label for="profile_can_do_wall_walks" :value="__('Wall Walks')"
                             class="block text-sm/6 font-medium" />
@@ -255,7 +255,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_hs_walks" id="profile_can_do_hs_walks"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_do_hs_walks" />
                         <x-input-label for="profile_can_do_hs_walks" :value="__('Handstand Walks')"
                             class="block text-sm/6 font-medium" />
@@ -264,7 +264,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_bmu" id="profile_can_do_bmu"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_do_bmu" />
                         <x-input-label for="profile_can_do_bmu" :value="__('Bar Muscle-Ups')"
                             class="block text-sm/6 font-medium" />
@@ -273,7 +273,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_rmu" id="profile_can_do_rmu"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_do_rmu" />
                         <x-input-label for="profile_can_do_rmu" :value="__('Ring Muscle-Ups')"
                             class="block text-sm/6 font-medium" />
@@ -282,7 +282,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_dus" id="profile_can_do_dus"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_do_dus" />
                         <x-input-label for="profile_can_do_dus" :value="__('Double-Unders')"
                             class="block text-sm/6 font-medium" />
@@ -302,7 +302,7 @@ new #[Layout('layouts.guest')] class extends Component {
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_handle_rx_db_weight"
                             id="profile_can_handle_rx_db_weight"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_handle_rx_db_weight" />
                         <x-input-label for="profile_can_handle_rx_db_weight" :value="__('2x 22,5/15KG Dumbbells')"
                             class="block text-sm/6 font-medium" />
@@ -312,7 +312,7 @@ new #[Layout('layouts.guest')] class extends Component {
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_handle_rx_wb_weight"
                             id="profile_can_handle_rx_wb_weight"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 "
+                            class="relative size-4 appearance-none rounded-full border border-gray-300 before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2"
                             type="checkbox" name="profile_can_handle_rx_wb_weight" />
                         <x-input-label for="profile_can_handle_rx_wb_weight" :value="__('9/6KG Wall Balls')"
                             class="block text-sm/6 font-medium" />
@@ -362,7 +362,7 @@ new #[Layout('layouts.guest')] class extends Component {
                     <x-input-label for="profile_notes" :value="__('Lass es uns wissen')" />
                     <div class="mt-2">
                         <textarea name="profile_notes" id="profile_notes" rows="3"
-                            class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-xs"></textarea>
+                            class="block w-full border-gray-700 bg-gray-900 text-gray-300 focus:border-indigo-600 focus:ring-indigo-600 rounded-md shadow-xs"></textarea>
                         <x-input-error :messages="$errors->get('profile_notes')" class="mt-2" />
                     </div>
                 </div>
