@@ -106,13 +106,14 @@ new #[Layout('layouts.guest')] class extends Component {
 
 <div>
     <form wire:submit="register">
-        <div class="space-y-12">
-            <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base/7 font-semibold">Account</h2>
-                <p class="mt-1 text-sm/6">This information is for authentication purposes.</p>
-
-                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
-                    <div class="">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12">
+            <div>
+                <h2 class="text-white text-base/7 font-semibold">Account</h2>
+                <p class="mt-1 text-sm/6">Your login credentials.</p>
+            </div>
+            <div class="col-span-2">
+                <div class="space-y-6">
+                    <div>
                         <x-input-label for="name" :value="__('Name')" />
                         <div class="mt-2">
                             <x-text-input wire:model="name" id="name" class="block mt-1 w-full" type="text"
@@ -121,7 +122,7 @@ new #[Layout('layouts.guest')] class extends Component {
                         </div>
                     </div>
 
-                    <div class="">
+                    <div>
                         <x-input-label for="email" :value="__('Email')" />
                         <div class="mt-2">
                             <x-text-input wire:model="email" id="email" class="block mt-1 w-full" type="email"
@@ -131,7 +132,7 @@ new #[Layout('layouts.guest')] class extends Component {
                     </div>
 
                     <!-- Password -->
-                    <div class="">
+                    <div>
                         <x-input-label for="password" :value="__('Password')" />
 
                         <x-text-input wire:model="password" id="password" class="block mt-1 w-full" type="password"
@@ -141,7 +142,7 @@ new #[Layout('layouts.guest')] class extends Component {
                     </div>
 
                     <!-- Confirm Password -->
-                    <div class="">
+                    <div>
                         <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
                         <x-text-input wire:model="password_confirmation" id="password_confirmation"
@@ -150,17 +151,19 @@ new #[Layout('layouts.guest')] class extends Component {
 
                         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                     </div>
-
                 </div>
             </div>
+        </div>
 
-            <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base/7 font-semibold">Division</h2>
-                <p class="mt-1 text-sm/6">We'll use the following data to create well balanced teams.</p>
-
-                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
-                    <div class="">
-                        <x-input-label for="profile_birthday" :value="__('Birtday')" />
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12">
+            <div>
+                <h2 class="text-white text-base/7 font-semibold">Division</h2>
+                <p class="mt-1 text-sm/6">Let us know how experienced you are.</p>
+            </div>
+            <div class="col-span-2">
+                <div class="grid grid-cols-1 gap-x-6 space-y-6">
+                    <div>
+                        <x-input-label for="profile_birthday" :value="__('Birthday')" />
                         <div class="mt-2 grid grid-cols-1">
                             <x-text-input wire:model="profile_birthday" id="profile_birthday" class="block mt-1 w-full"
                                 type="date" name="profile_birthday" required />
@@ -168,7 +171,7 @@ new #[Layout('layouts.guest')] class extends Component {
                         </div>
                     </div>
 
-                    <div class="">
+                    <div>
                         <x-input-label for="profile_division" :value="__('Division')" />
                         <div class="mt-2 grid grid-cols-1">
                             <select wire:model="profile_division" id="profile_division" name="profile_division"
@@ -184,93 +187,78 @@ new #[Layout('layouts.guest')] class extends Component {
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base/7 font-semibold">Skills</h2>
-                <p class="mt-1 text-sm/6">We'll use the following data to create well balanced teams.</p>
-
-                <div class="mt-6 space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div>
+                <h2 class="text-white text-base/7 font-semibold">Skills</h2>
+                <p class="mt-1 text-sm/6">In the following questions, you can check whether you have the respective skills. It's not about how many repetitions you can do just if you can.</p>
+            </div>
+            <div class="col-span-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_pull_ups" id="profile_can_do_pull_ups"
                         class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_pull_ups" />
                         <x-input-label for="profile_can_do_pull_ups" :value="__('I can do Pull-Ups')" class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_pull_ups')" class="mt-2" />
                     </div>
-                </div>
 
-                <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_c2b_pull_ups" id="profile_can_do_c2b_pull_ups"
                         class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_c2b_pull_ups" />
                         <x-input-label for="profile_can_do_c2b_pull_ups" :value="__('I can do Chest-To-Bar-Pull-Ups')" class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_c2b_pull_ups')" class="mt-2" />
                     </div>
-                </div>
 
-                <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_t2b" id="profile_can_do_t2b"
                         class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_t2b" />
                         <x-input-label for="profile_can_do_t2b" :value="__('I can do Toes-To-Bar')" class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_t2b')" class="mt-2" />
                     </div>
-                </div>
 
-                <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_kipping_hspu" id="profile_can_do_kipping_hspu"
                         class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_kipping_hspu" />
                         <x-input-label for="profile_can_do_kipping_hspu" :value="__('I can do Kipping Handstand Push-Ups')" class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_kipping_hspu')" class="mt-2" />
                     </div>
-                </div>
 
-                <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_strict_hspu" id="profile_can_do_strict_hspu"
                         class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_strict_hspu" />
                         <x-input-label for="profile_can_do_strict_hspu" :value="__('I can do Strict Handstand Push-Ups')" class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_strict_hspu')" class="mt-2" />
                     </div>
-                </div>
 
-                <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_wall_walks" id="profile_can_do_wall_walks"
                         class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_wall_walks" />
                         <x-input-label for="profile_can_do_wall_walks" :value="__('I can do Wall Walks')" class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_wall_walks')" class="mt-2" />
                     </div>
-                </div>
 
-                <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_hs_walks" id="profile_can_do_hs_walks"
                         class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_hs_walks" />
                         <x-input-label for="profile_can_do_hs_walks" :value="__('I can do Handstand Walks')" class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_hs_walks')" class="mt-2" />
                     </div>
-                </div>
 
-                <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_bmu" id="profile_can_do_bmu"
                         class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_bmu" />
                         <x-input-label for="profile_can_do_bmu" :value="__('I can do Bar Muscle-Ups')" class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_bmu')" class="mt-2" />
                     </div>
-                </div>
 
-                <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_rmu" id="profile_can_do_rmu"
                         class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_rmu" />
                         <x-input-label for="profile_can_do_rmu" :value="__('I can do Ring Muscle-Ups')" class="block text-sm/6 font-medium" />
                         <x-input-error :messages="$errors->get('profile_can_do_rmu')" class="mt-2" />
                     </div>
-                </div>
 
-                <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <x-text-input wire:model="profile_can_do_dus" id="profile_can_do_dus"
                         class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_do_dus" />
@@ -279,38 +267,30 @@ new #[Layout('layouts.guest')] class extends Component {
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base/7 font-semibold">Weights</h2>
-                <p class="mt-1 text-sm/6">We'll use the following data to create well balanced teams.</p>
-
-                <fieldset>
-                    <div class="mt-6 space-y-6">
-                        <div class="flex items-center gap-x-3">
-                            <x-text-input wire:model="profile_can_handle_rx_db_weight" id="profile_can_handle_rx_db_weight"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_handle_rx_db_weight" />
-                            <x-input-label for="profile_can_handle_rx_db_weight" :value="__('I can handle 2x 22,5/15KG Dumbbells')" class="block text-sm/6 font-medium" />
-                            <x-input-error :messages="$errors->get('profile_can_handle_rx_db_weight')" class="mt-2" />
-                        </div>
-                    </div>
-
-                    <div class="mt-6 space-y-6">
-                        <div class="flex items-center gap-x-3">
-                            <x-text-input wire:model="profile_can_handle_rx_wb_weight" id="profile_can_handle_rx_wb_weight"
-                            class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_handle_rx_wb_weight" />
-                            <x-input-label for="profile_can_handle_rx_wb_weight" :value="__('I can handle 9/6KG Wall Balls')" class="block text-sm/6 font-medium" />
-                            <x-input-error :messages="$errors->get('profile_can_handle_rx_wb_weight')" class="mt-2" />
-                        </div>
-                    </div>
-                </fieldset>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div>
+                <h2 class="text-white text-base/7 font-semibold">Weights</h2>
+                <p class="mt-1 text-sm/6">An indication for your strength level.</p>
             </div>
+            <div class="col-span-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 space-y-6">
+                    <div class="flex items-center gap-x-3">
+                        <x-text-input wire:model="profile_can_handle_rx_db_weight" id="profile_can_handle_rx_db_weight"
+                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_handle_rx_db_weight" />
+                        <x-input-label for="profile_can_handle_rx_db_weight" :value="__('I can handle 2x 22,5/15KG Dumbbells')" class="block text-sm/6 font-medium" />
+                        <x-input-error :messages="$errors->get('profile_can_handle_rx_db_weight')" class="mt-2" />
+                    </div>
 
-            <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base/7 font-semibold">Benchmarks</h2>
-                <p class="mt-1 text-sm/6">We'll use the following data to create well balanced teams.</p>
+                    <div class="flex items-center gap-x-3">
+                        <x-text-input wire:model="profile_can_handle_rx_wb_weight" id="profile_can_handle_rx_wb_weight"
+                        class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 focus-visible:outline-2 focus-visible:outline-offset-2 " type="checkbox" name="profile_can_handle_rx_wb_weight" />
+                        <x-input-label for="profile_can_handle_rx_wb_weight" :value="__('I can handle 9/6KG Wall Balls')" class="block text-sm/6 font-medium" />
+                        <x-input-error :messages="$errors->get('profile_can_handle_rx_wb_weight')" class="mt-2" />
+                    </div>
 
-                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
-                    <div class="">
+                    <div class="col-span-2">
                         <x-input-label for="profile_max_snatch" :value="__('Your max Snatch')" />
                         <div class="mt-2">
                             <x-text-input wire:model="profile_max_snatch" id="profile_max_snatch" class="block mt-1 w-full" type="number" min="1"
@@ -319,7 +299,7 @@ new #[Layout('layouts.guest')] class extends Component {
                         </div>
                     </div>
 
-                    <div class="">
+                    <div class="col-span-2">
                         <x-input-label for="profile_max_clean" :value="__('Your max Clean')" />
                         <div class="mt-2">
                             <x-text-input wire:model="profile_max_clean" id="profile_max_clean" class="block mt-1 w-full" type="number" min="1"
@@ -328,7 +308,7 @@ new #[Layout('layouts.guest')] class extends Component {
                         </div>
                     </div>
 
-                    <div class="">
+                    <div class="col-span-2">
                         <x-input-label for="profile_max_deadlift" :value="__('Your max Deadlift')" />
                         <div class="mt-2">
                             <x-text-input wire:model="profile_max_deadlift" id="profile_max_deadlift" class="block mt-1 w-full" type="number" min="1"
@@ -338,18 +318,19 @@ new #[Layout('layouts.guest')] class extends Component {
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base/7 font-semibold">Miscellaneous</h2>
-                <p class="mt-1 text-sm/6">We'll use the following data to create well balanced teams.</p>
-
-                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8">
-                    <div class="">
-                        <x-input-label for="profile_notes" :value="__('Any injury or other issues we should know about')" />
-                        <div class="mt-2">
-                            <textarea name="profile_notes" id="profile_notes" rows="3" class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-xs"></textarea>
-                            <x-input-error :messages="$errors->get('profile_notes')" class="mt-2" />
-                        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div>
+                <h2 class="text-white text-base/7 font-semibold">Issues</h2>
+                <p class="mt-1 text-sm/6">Anything we should know about.</p>
+            </div>
+            <div class="col-span-2">
+                <div>
+                    <x-input-label for="profile_notes" :value="__('Let us know')" />
+                    <div class="mt-2">
+                        <textarea name="profile_notes" id="profile_notes" rows="3" class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-xs"></textarea>
+                        <x-input-error :messages="$errors->get('profile_notes')" class="mt-2" />
                     </div>
                 </div>
             </div>
