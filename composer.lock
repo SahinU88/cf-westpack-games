@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8dfbdee78a1a09af2ddb1bb459e86a0a",
+    "content-hash": "06ab1d7c5f76b256c589986be136a080",
     "packages": [
         {
             "name": "brick/math",
@@ -1056,16 +1056,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v11.43.2",
+            "version": "v11.44.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "99d1573698abc42222f04d25fcd5b213d0eedf21"
+                "reference": "e9a33da34815ac1ed46c7e4c477a775f4592f0a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/99d1573698abc42222f04d25fcd5b213d0eedf21",
-                "reference": "99d1573698abc42222f04d25fcd5b213d0eedf21",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e9a33da34815ac1ed46c7e4c477a775f4592f0a7",
+                "reference": "e9a33da34815ac1ed46c7e4c477a775f4592f0a7",
                 "shasum": ""
             },
             "require": {
@@ -1267,7 +1267,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-02-19T21:53:48+00:00"
+            "time": "2025-02-24T13:08:54+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -2008,16 +2008,16 @@
         },
         {
             "name": "livewire/flux",
-            "version": "v1.1.5",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/flux.git",
-                "reference": "94b47e16f3c625fea2b7fe1ac5f6f4267570a643"
+                "reference": "424d88f7e1c68730edc56fd8041568c135c3d8ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/flux/zipball/94b47e16f3c625fea2b7fe1ac5f6f4267570a643",
-                "reference": "94b47e16f3c625fea2b7fe1ac5f6f4267570a643",
+                "url": "https://api.github.com/repos/livewire/flux/zipball/424d88f7e1c68730edc56fd8041568c135c3d8ab",
+                "reference": "424d88f7e1c68730edc56fd8041568c135c3d8ab",
                 "shasum": ""
             },
             "require": {
@@ -2065,25 +2065,25 @@
             ],
             "support": {
                 "issues": "https://github.com/livewire/flux/issues",
-                "source": "https://github.com/livewire/flux/tree/v1.1.5"
+                "source": "https://github.com/livewire/flux/tree/v2.0.2"
             },
-            "time": "2025-02-19T04:15:02+00:00"
+            "time": "2025-02-21T13:00:37+00:00"
         },
         {
             "name": "livewire/flux-pro",
-            "version": "1.1.5",
+            "version": "2.0.2",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.fluxui.dev/download/9e3f1a94-596f-4a50-a1c3-69f69e8de0fb/flux-pro-1.1.5.zip",
-                "reference": "d671670e9785c7118ee082762686869d58222565",
-                "shasum": "437ef25f9fb294aa87b98f0e315b6c499295802f"
+                "url": "https://composer.fluxui.dev/download/9e43e623-b213-4ff1-a6a9-32c9aad82212/flux-pro-2.0.2.zip",
+                "reference": "e6a67a9d1982a34565880b8f7d4aabc17197d6f7",
+                "shasum": "7b9453b5db0a87fc90bceb49196319549ea04fe8"
             },
             "require": {
                 "illuminate/console": "^10.0|^11.0|^12.0",
                 "illuminate/support": "^10.0|^11.0|^12.0",
                 "illuminate/view": "^10.0|^11.0|^12.0",
                 "laravel/prompts": "^0.1.24|^0.2|^0.3",
-                "livewire/flux": "1.1.5",
+                "livewire/flux": "2.0.2|dev-main",
                 "livewire/livewire": "^3.5.19",
                 "php": "^8.1",
                 "symfony/console": "^6.0|^7.0"
@@ -2124,7 +2124,7 @@
                 "livewire",
                 "ui"
             ],
-            "time": "2025-02-19T04:17:43+00:00"
+            "time": "2025-02-21T13:30:12+00:00"
         },
         {
             "name": "livewire/livewire",
@@ -6513,29 +6513,29 @@
         },
         {
             "name": "laravel/breeze",
-            "version": "v2.3.4",
+            "version": "v2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/breeze.git",
-                "reference": "e456fe0db93d1f9f5ce3b2043739a0777404395c"
+                "reference": "1d85805c4aecc425a0ce157147384d4becea3fa2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/breeze/zipball/e456fe0db93d1f9f5ce3b2043739a0777404395c",
-                "reference": "e456fe0db93d1f9f5ce3b2043739a0777404395c",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/1d85805c4aecc425a0ce157147384d4becea3fa2",
+                "reference": "1d85805c4aecc425a0ce157147384d4becea3fa2",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^11.0",
-                "illuminate/filesystem": "^11.0",
-                "illuminate/support": "^11.0",
-                "illuminate/validation": "^11.0",
+                "illuminate/console": "^11.0|^12.0",
+                "illuminate/filesystem": "^11.0|^12.0",
+                "illuminate/support": "^11.0|^12.0",
+                "illuminate/validation": "^11.0|^12.0",
                 "php": "^8.2.0",
                 "symfony/console": "^7.0"
             },
             "require-dev": {
-                "laravel/framework": "^11.0",
-                "orchestra/testbench-core": "^9.0",
+                "laravel/framework": "^11.0|^12.0",
+                "orchestra/testbench-core": "^9.0|^10.0",
                 "phpstan/phpstan": "^2.0"
             },
             "type": "library",
@@ -6570,7 +6570,7 @@
                 "issues": "https://github.com/laravel/breeze/issues",
                 "source": "https://github.com/laravel/breeze"
             },
-            "time": "2025-02-11T13:19:28+00:00"
+            "time": "2025-02-19T23:49:42+00:00"
         },
         {
             "name": "laravel/pail",
