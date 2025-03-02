@@ -21,9 +21,7 @@ Route::view('/confirmed', 'confirmed')
     ->middleware(['auth'])
     ->name('confirmed');
 
-Route::get('dashboard', function () {
-    return to_route('confirmed');
-})
+Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
