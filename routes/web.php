@@ -5,15 +5,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-Route::get('logout', function(){
-        Auth::logout();
+Route::get('logout', function () {
+    Auth::logout();
 
-        request()->session()->invalidate();
+    request()->session()->invalidate();
 
-        request()->session()->regenerateToken();
+    request()->session()->regenerateToken();
 
-        return redirect('/');
-    })
+    return redirect('/');
+})
     ->middleware(['auth'])
     ->name('logout');
 
@@ -21,9 +21,9 @@ Route::view('/confirmed', 'confirmed')
     ->middleware(['auth'])
     ->name('confirmed');
 
-Route::get('dashboard', function(){
-        return to_route('confirmed');
-    })
+Route::get('dashboard', function () {
+    return to_route('confirmed');
+})
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
