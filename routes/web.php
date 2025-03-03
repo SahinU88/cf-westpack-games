@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome');
+Route::get('/', fn () => Auth::check() ? redirect(route('dashboard')) : redirect(route('login')));
 
 Route::get('logout', function () {
     Auth::logout();
@@ -16,10 +16,6 @@ Route::get('logout', function () {
 })
     ->middleware(['auth'])
     ->name('logout');
-
-Route::view('/confirmed', 'confirmed')
-    ->middleware(['auth'])
-    ->name('confirmed');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
