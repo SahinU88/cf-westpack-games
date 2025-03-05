@@ -23,14 +23,6 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->foreignId('team_id')->after('id')->nullable()->constrained();
         });
-
-        // Seed the teams table
-        DB::table('teams')->insert([
-            ['name' => 'Bum Tschak', 'slug' => 'bum-tschak', 'created_at' => now(), 'updated_at' => now()],
-            ['name' => 'The Weight Swifters', 'slug' => 'the-weight-swifters', 'created_at' => now(), 'updated_at' => now()],
-            ['name' => 'Sashimi', 'slug' => 'sashimi', 'created_at' => now(), 'updated_at' => now()],
-            ['name' => 'Westpack Unbroken', 'slug' => 'westpack-unbroken', 'created_at' => now(), 'updated_at' => now()],
-        ]);
     }
 
     /**
@@ -38,9 +30,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('teams');
         Schema::table('users', function (Blueprint $table) {
             $table->dropConstrainedForeignId('team_id');
         });
+
+        Schema::dropIfExists('teams');
     }
 };

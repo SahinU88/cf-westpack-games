@@ -25,7 +25,7 @@ class Profile extends Model
                 }
 
                 if ($this->is_mixed_division){
-                    return 'masters';
+                    return 'mixed';
                 }
 
                 return 'n.a.';
