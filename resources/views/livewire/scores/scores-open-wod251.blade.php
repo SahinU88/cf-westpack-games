@@ -46,5 +46,5 @@
                 </x-action-message>
             </form>
         </flux:card>
-    </x-settings.layout>
+    </x-scores.layout>
 </section>

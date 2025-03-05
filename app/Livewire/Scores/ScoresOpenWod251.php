@@ -45,11 +45,11 @@ class ScoresOpenWod251 extends Component
     {
         $user = Auth::user();
 
-        // if (now()->gt(Carbon::parse('01.03.2025 23:59:59'))) {
-        //     $this->dispatch('score-deadline-passed', name: $user->name);
+        if (now()->gt(Carbon::parse('01.03.2025 23:59:59'))) {
+            $this->dispatch('score-deadline-passed', name: $user->name);
 
-        //     return;
-        // }
+            return;
+        }
 
         $validated = $this->validate([
             'score' => ['required', 'int', 'min:0'],
@@ -61,15 +61,18 @@ class ScoresOpenWod251 extends Component
             ],
         ]);
 
-        $this->scoreObj->update([
-            'name' => 'Open WOD 25.1',
-            'data' => [
-                'score' => $validated['score'],
-                'type' => 'reps',
+        $user->scores()->updateOrCreate(
+            [
+                'name' => 'Open WOD 25.1',
             ],
-            'division' => $validated['division'],
-            'user_id' => $user->id,
-        ]);
+            [
+                'data' => [
+                    'score' => $validated['score'],
+                    'type' => 'reps',
+                ],
+                'division' => $validated['division'],
+            ]
+        );
 
         $this->dispatch('score-submitted', name: $user->name);
     }

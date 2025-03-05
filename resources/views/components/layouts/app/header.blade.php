@@ -15,6 +15,10 @@
                 <flux:navbar.item :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                     {{ __('Westpack Festspiele') }}
                 </flux:navbar.item>
+
+                <flux:navbar.item :href="route('teams.overview')" :current="request()->routeIs('teams.overview')" wire:navigate>
+                    {{ __('Teams') }}
+                </flux:navbar.item>
             </flux:navbar>
 
             <flux:spacer />

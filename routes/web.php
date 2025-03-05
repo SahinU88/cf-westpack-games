@@ -4,6 +4,7 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Scores\ScoresOpenWod251;
+use App\Livewire\Teams\Overview as TeamOverview;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', auth()->check() ? 'dashboard' : 'login')->name('home');
@@ -20,6 +21,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
 
     Route::get('scores/open-wod-25.1', ScoresOpenWod251::class)->name('scores.open-wod-25.1');
+
+    Route::get('teams', TeamOverview::class)->name('teams.overview');
 });
 
 require __DIR__.'/auth.php';
