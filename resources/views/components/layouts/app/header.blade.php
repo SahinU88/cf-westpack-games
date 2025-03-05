@@ -5,7 +5,7 @@
     </head>
     <body class="min-h-screen bg-white dark:bg-linear-to-b dark:from-fuchsia-950 dark:to-fuchsia-900">
         <flux:header container class="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-slate-900">
-            {{-- <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" /> --}}
+            <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
 
             <a href="{{ route('dashboard') }}" class="ml-2 mr-5 flex items-center space-x-2 lg:ml-0" wire:navigate>
                 <x-app-logo />
@@ -81,12 +81,24 @@
         </flux:header>
 
         <!-- Mobile Menu -->
-        {{-- <flux:sidebar stashable sticky class="lg:hidden border-r border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
+        <flux:sidebar stashable sticky class="lg:hidden border-r border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
             <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
 
             <a href="{{ route('dashboard') }}" class="ml-1 flex items-center space-x-2" wire:navigate>
                 <x-app-logo />
             </a>
+
+            <flux:navlist variant="outline">
+                <flux:navlist.group heading="Platform">
+                    <flux:navlist.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                        {{ __('Westpack Festspiele') }}
+                    </flux:navlist.item>
+
+                    <flux:navbar.item icon="user-group" :href="route('teams.overview')" :current="request()->routeIs('teams.overview')" wire:navigate>
+                        {{ __('Teams') }}
+                    </flux:navbar.item>
+                </flux:navlist.group>
+            </flux:navlist>
 
             <flux:spacer />
 
@@ -95,7 +107,7 @@
                 {{ __('Info zu Westpack Festspiele') }}
                 </flux:navlist.item>
             </flux:navlist>
-        </flux:sidebar> --}}
+        </flux:sidebar>
 
         {{ $slot }}
 

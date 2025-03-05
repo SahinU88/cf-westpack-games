@@ -19,6 +19,6 @@ class Overview extends Component
      */
     public function mount(): void
     {
-        $this->teams = Team::with('users')->get();
+        $this->teams = Team::with(['users', 'users.profile'])->get();
     }
 }
