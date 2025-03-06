@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
                 'score' => fake()->numberBetween(100, 300),
                 'type' => 'reps',
             ],
-            'division' => $user->profile->division,
+            'division' => fake()->randomElement(['rx', 'scaled']),
         ]);
     }
 }

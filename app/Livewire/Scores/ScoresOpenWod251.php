@@ -21,7 +21,7 @@ class ScoresOpenWod251 extends Component
      */
     public function mount(): void
     {
-        $this->scoreObj = Auth::user()->scores()->openWod25_1()->first();
+        $this->scoreObj = Auth::user()->scores()->openWod251()->first();
 
         if ($this->scoreObj === null) {
             $this->scoreObj = Auth::user()->scores()->create([

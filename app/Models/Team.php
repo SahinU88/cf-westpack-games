@@ -21,6 +21,18 @@ class Team extends Model
         );
     }
 
+    public function scoresOpenWod251(): Attribute
+    {
+        return new Attribute(
+            get: function(){
+                return Score::with(['user', 'user.team'])
+                    ->rankingOpenWod251()
+                    ->get()
+                    ->whereStrict('user.team.id', $this->id);
+            }
+        );
+    }
+
     public function users(): HasMany
     {
         return $this->hasMany(User::class);

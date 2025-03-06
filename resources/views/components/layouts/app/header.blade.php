@@ -13,17 +13,32 @@
 
             <flux:navbar class="-mb-px max-lg:hidden">
                 <flux:navbar.item :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
-                    {{ __('Westpack Festspiele') }}
+                    {{ __('Leaderboard') }}
                 </flux:navbar.item>
 
-                <flux:navbar.item :href="route('teams.overview')" :current="request()->routeIs('teams.overview')" wire:navigate>
-                    {{ __('Teams') }}
+                <flux:navbar.item href="#" wire:navigate>
+                    {{ __('25.1') }}
+                </flux:navbar.item>
+
+                <flux:navbar.item href="#" wire:navigate>
+                    {{ __('25.2') }}
+                </flux:navbar.item>
+
+                <flux:navbar.item href="#" wire:navigate>
+                    {{ __('25.3') }}
+                </flux:navbar.item>
+
+                <flux:navbar.item href="#" wire:navigate>
+                    {{ __('Bonus WOD') }}
                 </flux:navbar.item>
             </flux:navbar>
 
             <flux:spacer />
 
             <flux:navbar class="mr-1.5 space-x-0.5 py-0!">
+                <flux:navbar.item class="max-lg:hidden" :href="route('teams.overview')" :current="request()->routeIs('teams.overview')" wire:navigate>
+                    {{ __('Teams') }}
+                </flux:navbar.item>
                 <flux:tooltip content="Info zu den Westpack Festspiele" position="bottom">
                     <flux:navbar.item
                         class="h-10 max-lg:hidden [&>div>svg]:size-5"
@@ -90,21 +105,37 @@
 
             <flux:navlist variant="outline">
                 <flux:navlist.group heading="Platform">
-                    <flux:navlist.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
-                        {{ __('Westpack Festspiele') }}
+                    <flux:navlist.item icon="numbered-list" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                        {{ __('Leaderboard') }}
                     </flux:navlist.item>
 
-                    <flux:navbar.item icon="user-group" :href="route('teams.overview')" :current="request()->routeIs('teams.overview')" wire:navigate>
-                        {{ __('Teams') }}
-                    </flux:navbar.item>
+                    <flux:navlist.item icon="bolt" href="#" wire:navigate>
+                        {{ __('25.1') }}
+                    </flux:navlist.item>
+
+                    <flux:navlist.item icon="bolt-slash" href="#" wire:navigate>
+                        {{ __('25.2') }}
+                    </flux:navlist.item>
+
+                    <flux:navlist.item icon="bolt-slash" href="#" wire:navigate>
+                        {{ __('25.3') }}
+                    </flux:navlist.item>
+
+                    <flux:navlist.item icon="bolt-slash" href="#" wire:navigate>
+                        {{ __('Bonus WOD') }}
+                    </flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 
             <flux:spacer />
 
             <flux:navlist variant="outline">
+                <flux:navlist.item icon="user-group" :href="route('teams.overview')" :current="request()->routeIs('teams.overview')" wire:navigate>
+                    {{ __('Teams') }}
+                </flux:navlist.item>
+
                 <flux:navlist.item icon="book-open-text" href="https://www.crossfitwestpack.at/festspiele" target="_blank">
-                {{ __('Info zu Westpack Festspiele') }}
+                    {{ __('Info zu Westpack Festspiele') }}
                 </flux:navlist.item>
             </flux:navlist>
         </flux:sidebar>
