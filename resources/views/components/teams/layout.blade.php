@@ -4,7 +4,7 @@
             @foreach ($teams as $team)
                 <flux:navlist.item :href="'#' . $team->slug" wire:navigate>{{ $team->name }}</flux:navlist.item>
             @endforeach
-            <flux:navlist.item :href="route('dashboard')" icon="arrow-uturn-left" wire:navigate>{{ __('Zurück zur Übersicht') }}</flux:navlist.item>
+            <flux:navlist.item :href="route('dashboard')" icon="arrow-uturn-left" wire:navigate></flux:navlist.item>
         </flux:navlist>
     </div>
 

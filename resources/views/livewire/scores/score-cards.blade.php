@@ -15,7 +15,7 @@
                 </p>
                 <div class="absolute inset-x-0 bottom-0 bg-white/50 px-4 py-4 sm:px-6">
                     <div class="text-xs">
-                        <a href="#" class="font-medium text-black hover:text-black/50">View leaderboard</a>
+                        <a href="{{ route('leaderboards.25.1') }}" class="font-medium text-black hover:text-black/50">View leaderboard</a>
                     </div>
                 </div>
             </dd>

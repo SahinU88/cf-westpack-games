@@ -1,7 +1,7 @@
 <section class="w-full">
     @include('partials.teams-heading')
 
-    <x-teams.layout :heading="__('Teams')" :subheading="__('Wähle ein Team aus um die Mitglieder zu sehen')" :teams="$teams">
+    <x-teams.layout :heading="__('Teams')" :subheading="__('All the amazing teams.')" :teams="$teams">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             @foreach ($teams as $team)
                 <div class="">
