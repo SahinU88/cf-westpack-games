@@ -16,7 +16,7 @@
                     {{ __('Leaderboard') }}
                 </flux:navbar.item>
 
-                <flux:navbar.item href="#" wire:navigate>
+                <flux:navbar.item :href="route('leaderboards.25.1')" :current="request()->routeIs('leaderboards.25.1')" wire:navigate>
                     {{ __('25.1') }}
                 </flux:navbar.item>
 
@@ -109,7 +109,7 @@
                         {{ __('Leaderboard') }}
                     </flux:navlist.item>
 
-                    <flux:navlist.item icon="bolt" href="#" wire:navigate>
+                    <flux:navlist.item icon="bolt" :href="route('leaderboards.25.1')" :current="request()->routeIs('leaderboards.25.1')" wire:navigate>
                         {{ __('25.1') }}
                     </flux:navlist.item>
 

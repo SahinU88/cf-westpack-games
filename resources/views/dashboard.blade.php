@@ -14,7 +14,7 @@
 
             <div class="w-full border-t border-white/50 mb-4"></div>
 
-            <livewire:scores.leaderboard />
+            <livewire:leaderboards.leaderboard />
 
         </div>
 

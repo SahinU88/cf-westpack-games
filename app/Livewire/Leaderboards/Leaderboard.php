@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Scores;
+namespace App\Livewire\Leaderboards;
 
 use App\Models\Score;
 use Livewire\Component;

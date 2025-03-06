@@ -42,7 +42,7 @@ class Score extends Model
             ->all();
     }
 
-    public static function individualRankingOpenWod251($division)
+    public static function individualRankingOpenWod251($division = false)
     {
         return Score::with(['user', 'user.team'])
             ->rankingOpenWod251($division)

@@ -45,7 +45,7 @@ class ScoresOpenWod251 extends Component
     {
         $user = Auth::user();
 
-        if (now()->gt(Carbon::parse('01.03.2025 23:59:59'))) {
+        if (now()->greaterThanOrEqualTo(Carbon::parse('05.03.2025'))) {
             $this->dispatch('score-deadline-passed', name: $user->name);
 
             return;

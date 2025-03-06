@@ -16,7 +16,7 @@
                     #{{ $loop->iteration }}
                 </flux:table.cell>
                 <flux:table.cell>
-                    <span>{{ $rank['team']->name }}</span>
+                    <span>{{ $rank['team']->name }}</span>@if (auth()->user()->team_id === $rank['team']->id)<span class="inline-flex items-center rounded-md bg-green-100 ml-2 px-1.5 py-0.5 text-xs font-medium text-green-700">Your Team</span>@endif
                 </flux:table.cell>
                 <flux:table.cell align="end">
                     <div>{{ $rank['total_points'] }}</div>
