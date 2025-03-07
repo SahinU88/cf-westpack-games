@@ -102,15 +102,4 @@ class ScoresOpenWod252 extends Component
 
         $this->dispatch('score-submitted', name: $user->name);
     }
-
-    public function yourLivewireFunction($value)
-    {
-        $this->finishedWod = $value === 1;
-
-        if ($this->finishedWod) {
-            Log::info('true');
-        } else {
-            Log::info('false');
-        }
-    }
 }
