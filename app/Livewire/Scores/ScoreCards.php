@@ -24,6 +24,20 @@ class ScoreCards extends Component
         $this->score251 = $user->scores()->openWod251()->first();
         $this->score252 = $user->scores()->openWod252()->first();
 
+        if ($this->score252 === null){
+            $this->score252 = $user->scores()->create([
+                'name' => 'Open WOD 25.2',
+                'data' => [
+                    'finishedWod' => false,
+                    'reps' => 0,
+                    'time' => '00:00',
+                    'tiebreak' => '00:00',
+                    'type' => 'time-or-reps',
+                ],
+                'division' => '',
+            ]);
+        }
+
         $this->rankingOpenWod251 = Score::individualRankingOpenWod251($this->score251->division)
             ->where('user.id', $user->id)
             ->first();
