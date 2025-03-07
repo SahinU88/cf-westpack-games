@@ -22,9 +22,10 @@ class ScoreCards extends Component
         $user = auth()->user();
 
         $this->score251 = $user->scores()->openWod251()->first();
-        $this->score252 = $user->scores()->openWod252()->first();
 
-        if ($this->score252 === null){
+        if ($user->scores()->openWod252()->exists()){
+            $this->score252 = $user->scores()->openWod252()->first();
+        } else {
             $this->score252 = $user->scores()->create([
                 'name' => 'Open WOD 25.2',
                 'data' => [
