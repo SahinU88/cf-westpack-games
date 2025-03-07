@@ -29,7 +29,10 @@
 
                 <flux:field wire:show="finishedWod === 'Yes'">
                     <flux:label>Time for finishing the workout</flux:label>
-                    <flux:input wire:model="time" id="time" placeholder="11:30" type="time" name="time" required />
+                    <flux:input.group>
+                        <flux:input wire:model="time" id="time" name="time" placeholder="11:30" mask="99:99" value="11:56" required />
+                        <flux:input.group.suffix>min</flux:input.group.suffix>
+                    </flux:input.group>
                 </flux:field>
 
                 <flux:field wire:show="finishedWod === 'No'">
@@ -42,7 +45,10 @@
 
                 <flux:field>
                     <flux:label>Tiebreak time</flux:label>
-                    <flux:input wire:model="tiebreak" id="tiebreak" placeholder="11:30" type="tiebreak" name="tiebreak" type="time" required />
+                    <flux:input.group>
+                        <flux:input wire:model="tiebreak" id="tiebreak" name="tiebreak" placeholder="11:30" mask="99:99" value="10:56" required />
+                        <flux:input.group.suffix>min</flux:input.group.suffix>
+                    </flux:input.group>
                 </flux:field>
 
                 <flux:select wire:model="division" variant="listbox" placeholder="Wähle deine Division aus" required>

@@ -3,6 +3,7 @@
 namespace App\Livewire\Scores;
 
 use App\Models\Score;
+use App\Models\User;
 use Livewire\Component;
 
 class ScoreCards extends Component
@@ -21,12 +22,40 @@ class ScoreCards extends Component
     {
         $user = auth()->user();
 
-        $this->score251 = $user->scores()->openWod251()->first();
+        $this->score251 = $this->getScoreFor251($user);
+        $this->score252 = $this->getScoreFor252($user);
 
-        if ($user->scores()->openWod252()->exists()){
-            $this->score252 = $user->scores()->openWod252()->first();
-        } else {
-            $this->score252 = $user->scores()->create([
+        $this->rankingOpenWod251 = Score::individualRankingOpenWod251($this->score251->division)
+            ->where('user.id', $user->id)
+            ->first();
+    }
+
+    private function getScoreFor251(User $user): Score
+    {
+        $score = $user->scores()->openWod251()->first();
+
+        if ($score === null)
+        {
+            $score = $user->scores()->create([
+                'name' => 'Open WOD 25.1',
+                'data' => [
+                    'score' => 0,
+                    'type' => 'reps',
+                ],
+                'division' => '',
+            ]);
+        }
+
+        return $score;
+    }
+
+    private function getScoreFor252(User $user): Score
+    {
+        $score = $user->scores()->openWod252()->first();
+
+        if ($score === null)
+        {
+            $score = $user->scores()->create([
                 'name' => 'Open WOD 25.2',
                 'data' => [
                     'finishedWod' => false,
@@ -39,8 +68,6 @@ class ScoreCards extends Component
             ]);
         }
 
-        $this->rankingOpenWod251 = Score::individualRankingOpenWod251($this->score251->division)
-            ->where('user.id', $user->id)
-            ->first();
+        return $score;
     }
 }
