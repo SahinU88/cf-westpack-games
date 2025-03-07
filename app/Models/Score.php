@@ -71,6 +71,11 @@ class Score extends Model
         return $query->where('name', 'Open WOD 25.1');
     }
 
+    public function scopeOpenWod252($query)
+    {
+        return $query->where('name', 'Open WOD 25.2');
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

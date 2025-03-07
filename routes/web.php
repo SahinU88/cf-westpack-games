@@ -5,6 +5,7 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Scores\ScoresOpenWod251;
+use App\Livewire\Scores\ScoresOpenWod252;
 use App\Livewire\Teams\Overview as TeamOverview;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
 
     Route::get('scores/open-wod-25.1', ScoresOpenWod251::class)->name('scores.open-wod-25.1');
+    Route::get('scores/open-wod-25.2', ScoresOpenWod252::class)->name('scores.open-wod-25.2');
 
     Route::get('leaderboards/25.1', Leaderboard251::class)->name('leaderboards.25.1');
 
