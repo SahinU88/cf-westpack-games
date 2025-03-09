@@ -8,6 +8,7 @@ use App\Livewire\Settings\Profile;
 use App\Livewire\Scores\ScoresOpenWod251;
 use App\Livewire\Scores\ScoresOpenWod252;
 use App\Livewire\Teams\Overview as TeamOverview;
+use App\Livewire\Teams\Detail as TeamDetail;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', auth()->check() ? 'dashboard' : 'login')->name('home');
@@ -30,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('leaderboards/25.2', Leaderboard252::class)->name('leaderboards.25.2');
 
     Route::get('teams', TeamOverview::class)->name('teams.overview');
+    Route::get('teams/{team}', TeamDetail::class)->name('teams.detail');
 });
 
 require __DIR__.'/auth.php';
