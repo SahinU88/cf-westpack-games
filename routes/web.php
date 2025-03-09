@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Leaderboards\Leaderboard251;
+use App\Livewire\Leaderboards\Leaderboard252;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -26,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('scores/open-wod-25.2', ScoresOpenWod252::class)->name('scores.open-wod-25.2');
 
     Route::get('leaderboards/25.1', Leaderboard251::class)->name('leaderboards.25.1');
+    Route::get('leaderboards/25.2', Leaderboard252::class)->name('leaderboards.25.2');
 
     Route::get('teams', TeamOverview::class)->name('teams.overview');
 });

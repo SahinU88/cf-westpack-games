@@ -23,6 +23,14 @@ class Login extends Component
 
     public bool $remember = false;
 
+    public function mount(): void
+    {
+        if (app()->isLocal() & !auth()->check()){
+            $this->email = 'sahin.ucar.su@gmail.com';
+            $this->password = 'password';
+        }
+    }
+
     /**
      * Handle an incoming authentication request.
      */

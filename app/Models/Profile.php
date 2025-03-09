@@ -33,6 +33,19 @@ class Profile extends Model
         );
     }
 
+    public function divisionForScore(): Attribute
+    {
+        return new Attribute(
+            get: function () {
+                if ($this->is_rx_division || $this->is_mixed_division){
+                    return 'rx';
+                }
+
+                return 'scaled';
+            }
+        );
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

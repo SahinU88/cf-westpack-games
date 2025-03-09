@@ -40,9 +40,12 @@
                 <p class="basis-full text-sm text-gray-500">
                     Tiebreak: {{ $score252->data['tiebreak'] }} <flux:icon.clock class="inline-block size-5 pb-1" />
                 </p>
-                <div class="absolute inset-x-0 bottom-0 px-4 py-4 sm:px-6">
+                <div class="absolute inset-x-0 bottom-0 flex justify-between px-4 py-4 sm:px-6">
                     <div class="text-xs">
                         <a href="{{ route('scores.open-wod-25.2') }}" class="font-medium text-black hover:text-black/50">Submit your score</a>
+                    </div>
+                    <div class="text-xs">
+                        <a href="{{ route('leaderboards.25.2') }}" class="font-medium text-black hover:text-black/50">View leaderboard</a>
                     </div>
                 </div>
             </dd>

@@ -1,5 +1,5 @@
 <div>
-    <flux:heading>Leaderboard 25.1</flux:heading>
+    <flux:heading>Leaderboard 25.2</flux:heading>
     <flux:subheading>{{ $division }}</flux:subheading>
 
     <div class="w-full mb-4"></div>
@@ -27,7 +27,11 @@
                         <span>{{ $rank['team']->name }}</span>
                     </flux:table.cell>
                     <flux:table.cell align="end">
-                        {{ $rank['score'] }}
+                        @if ($rank['finishedWod'])
+                            {{ $rank['time'] }} ({{ $rank['tiebreak'] }})
+                        @else
+                            {{ $rank['reps'] }} ({{ $rank['tiebreak'] }})
+                        @endif
                     </flux:table.cell>
                     <flux:table.cell align="end">
                         {{ $rank['points'] }}

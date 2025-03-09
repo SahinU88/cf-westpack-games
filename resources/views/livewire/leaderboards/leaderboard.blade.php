@@ -10,7 +10,7 @@
     </flux:table.columns>
 
     <flux:table.rows>
-        @foreach ($rankingOpenWod251 as $rank)
+        @foreach ($rankings as $rank)
             <flux:table.row>
                 <flux:table.cell variant="strong">
                     #{{ $loop->iteration }}
@@ -19,11 +19,12 @@
                     <span>{{ $rank['team']->name }}</span>@if (auth()->user()->team_id === $rank['team']->id)<span class="inline-flex items-center rounded-md bg-green-100 ml-2 px-1.5 py-0.5 text-xs font-medium text-green-700">Your Team</span>@endif
                 </flux:table.cell>
                 <flux:table.cell align="end">
-                    <div>{{ $rank['total_points'] }}</div>
-                    <div class="mt-1 text-black/50 dark:text-white/50">({{ $rank['scores_rx']['points'] }} + {{ $rank['scores_scaled']['points'] }})</div>
+                    <div>{{ $rank['points_251']['total'] }}</div>
+                    <div class="mt-1 text-black/50 dark:text-white/50">({{ $rank['points_251']['rx'] }} + {{ $rank['points_251']['scaled'] }})</div>
                 </flux:table.cell>
                 <flux:table.cell align="end">
-                    <flux:icon.ellipsis-horizontal variant="solid" class="inline-block text-black/50 dark:text-white/50" />
+                    <div>{{ $rank['points_252']['total'] }}</div>
+                    <div class="mt-1 text-black/50 dark:text-white/50">({{ $rank['points_252']['rx'] }} + {{ $rank['points_252']['scaled'] }})</div>
                 </flux:table.cell>
                 <flux:table.cell align="end">
                     <flux:icon.ellipsis-horizontal variant="solid" class="inline-block text-black/50 dark:text-white/50" />

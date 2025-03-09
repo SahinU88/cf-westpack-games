@@ -2,6 +2,7 @@
     <div class="mr-10 w-full pb-4 md:w-[220px]">
         <flux:navlist>
             <flux:navlist.item :href="route('leaderboards.25.1')" wire:navigate>{{ __('25.1') }}</flux:navlist.item>
+            <flux:navlist.item :href="route('leaderboards.25.2')" wire:navigate>{{ __('25.2') }}</flux:navlist.item>
             <flux:navlist.item :href="route('dashboard')" icon="arrow-uturn-left" wire:navigate></flux:navlist.item>
         </flux:navlist>
     </div>
