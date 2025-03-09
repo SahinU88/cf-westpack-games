@@ -11,7 +11,7 @@
             <dd class="flex items-baseline pb-6 sm:pb-7">
                 <p class="text-2xl font-semibold text-gray-900">{{ $score251->data['score'] }} reps</p>
                 <p class="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-                    <flux:icon.hashtag /> {{ $rankingOpenWod251['points'] }}
+                    <flux:icon.hashtag /> {{ $rankingOpenWod251['rank'] }}
                 </p>
                 <div class="absolute inset-x-0 bottom-0 px-4 py-4 sm:px-6">
                     <div class="text-xs">
@@ -35,7 +35,7 @@
                     </p>
                 </div>
                 <p class="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-                    <flux:icon.hashtag /> ?
+                    <flux:icon.hashtag /> {{ $rankingOpenWod252['rank'] }}
                 </p>
                 <p class="basis-full text-sm text-gray-500">
                     Tiebreak: {{ $score252->data['tiebreak'] }} <flux:icon.clock class="inline-block size-5 pb-1" />

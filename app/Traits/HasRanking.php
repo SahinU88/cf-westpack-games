@@ -86,6 +86,7 @@ trait HasRanking
                 }
 
                 return [
+                    'rank' => $rank,
                     'points' => $rank,
                     'team' => $score->user->team,
                     'user' => $score->user,

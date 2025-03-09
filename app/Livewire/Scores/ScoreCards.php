@@ -28,6 +28,10 @@ class ScoreCards extends Component
         $this->rankingOpenWod251 = Score::individualRankingOpenWod251($this->score251->division)
             ->where('user.id', $user->id)
             ->first();
+
+        $this->rankingOpenWod252 = Score::individualRankingOpenWod252($this->score252->division)
+            ->where('user.id', $user->id)
+            ->first();
     }
 
     private function getScoreFor251(User $user): Score
