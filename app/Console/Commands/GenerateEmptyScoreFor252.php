@@ -33,6 +33,10 @@ class GenerateEmptyScoreFor252 extends Command
 
             if ($score === null)
             {
+                if ($user->profile()->doesntExist()) {
+                    return;
+                }
+
                 $user->scores()->create([
                     'name' => 'Open WOD 25.2',
                     'data' => [
@@ -42,7 +46,7 @@ class GenerateEmptyScoreFor252 extends Command
                         'tiebreak' => '00:00',
                         'type' => 'time-or-reps',
                     ],
-                    'division' => $user->profile->division,
+                    'division' => $user->profile->division_for_score,
                 ]);
             }
         });
