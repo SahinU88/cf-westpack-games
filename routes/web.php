@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('leaderboards/25.2', Leaderboard252::class)->name('leaderboards.25.2');
 
     Route::get('teams', TeamOverview::class)->name('teams.overview');
-    Route::get('teams/{team}', TeamDetail::class)->name('teams.detail');
+    Route::get('teams/{team:slug}', TeamDetail::class)->name('teams.detail');
 });
 
 require __DIR__.'/auth.php';

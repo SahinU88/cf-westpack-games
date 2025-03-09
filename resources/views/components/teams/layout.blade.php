@@ -5,8 +5,8 @@
             <flux:separator class="mb-2" />
             @foreach ($teams as $team)
                 <flux:navlist.item
-                    :href="route('teams.detail', $team->id)"
-                    :current="request()->routeIs('teams.detail') && request()->route('team')->id == $team->id"
+                    :href="route('teams.detail', $team->slug)"
+                    :current="request()->routeIs('teams.detail') && request()->route('team')->slug == $team->slug"
                     wire:navigate
                 >
                         {{ $team->name }}
