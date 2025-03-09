@@ -17,7 +17,7 @@
             @foreach ($rankings as $rank)
                 <flux:table.row>
                     <flux:table.cell variant="strong">
-                        #{{ $loop->iteration }}
+                        #{{ $rank['points'] }}
                     </flux:table.cell>
                     <flux:table.cell>
                         <span>{{ $rank['user']->name }}</span>
@@ -33,7 +33,7 @@
                             {{ $rank['reps'] }} ({{ $rank['tiebreak'] }})
                         @endif
                     </flux:table.cell>
-                    <flux:table.cell align="end">
+                    <flux:table.cell variant="strong" align="end">
                         {{ $rank['points'] }}
                     </flux:table.cell>
                 </flux:table.row>
