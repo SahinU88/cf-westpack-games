@@ -16,6 +16,10 @@
                     {{ __('Leaderboard') }}
                 </flux:navbar.item>
 
+                <flux:navlist.item :href="route('scores.overview')" :current="request()->routeIs('scores.*')" wire:navigate>
+                    {{ __('Your Scores') }}
+                </flux:navlist.item>
+
                 <flux:navbar.item :href="route('leaderboards.25.1')" :current="request()->routeIs('leaderboards.25.1')" wire:navigate>
                     {{ __('25.1') }}
                 </flux:navbar.item>
@@ -105,8 +109,12 @@
 
             <flux:navlist variant="outline">
                 <flux:navlist.group heading="Platform">
-                    <flux:navlist.item icon="numbered-list" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                    <flux:navlist.item icon="trophy" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Leaderboard') }}
+                    </flux:navlist.item>
+
+                    <flux:navlist.item icon="numbered-list" :href="route('scores.overview')" :current="request()->routeIs('scores.*')" wire:navigate>
+                        {{ __('Your Scores') }}
                     </flux:navlist.item>
 
                     <flux:navlist.item icon="bolt" :href="route('leaderboards.25.1')" :current="request()->routeIs('leaderboards.25.1')" wire:navigate>
