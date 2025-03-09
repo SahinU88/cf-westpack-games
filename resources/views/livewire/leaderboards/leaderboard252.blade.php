@@ -3,7 +3,7 @@
 
     <x-leaderboards.layout>
         <flux:tab.group>
-            <flux:tabs wire:model="tab">
+            <flux:tabs>
                 <flux:tab name="rx">Rx</flux:tab>
                 <flux:tab name="scaled">Scaled</flux:tab>
                 <flux:tab name="all">All</flux:tab>
