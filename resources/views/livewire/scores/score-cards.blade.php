@@ -52,15 +52,17 @@
                 <p class="text-sm font-medium text-gray-500">25.3</p>
             </dt>
             <dd class="flex items-baseline pb-6 sm:pb-7">
-                <p class="text-2xl font-semibold">
-                    <p class="text-gray-900">
-                        @if ($score252->data['finishedWod'])
-                            {{ $score252->data['time'] }}
-                        @else
-                            {{ $score252->data['reps'] }} reps
-                        @endif
+                <div class="text-2xl font-semibold">
+                    <p class="text-2xl font-semibold">
+                        <p class="text-gray-900">
+                            @if ($score253->data['finishedWod'])
+                                {{ $score253->data['time'] }}
+                            @else
+                                {{ $score253->data['reps'] }} reps
+                            @endif
+                        </p>
                     </p>
-                </p>
+                </div>
                 <p class="ml-2 flex items-baseline text-sm font-semibold text-green-600">
                     <flux:icon.hashtag /> {{ $rankingOpenWod253['rank'] }}
                 </p>
