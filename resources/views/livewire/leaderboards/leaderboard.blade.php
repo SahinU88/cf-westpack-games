@@ -27,7 +27,8 @@
                     <div class="mt-1 text-black/50 dark:text-white/50">({{ $rank['points_252']['rx'] }} + {{ $rank['points_252']['scaled'] }})</div>
                 </flux:table.cell>
                 <flux:table.cell align="end">
-                    <flux:icon.ellipsis-horizontal variant="solid" class="inline-block text-black/50 dark:text-white/50" />
+                    <div>{{ $rank['points_253']['total'] }}</div>
+                    <div class="mt-1 text-black/50 dark:text-white/50">({{ $rank['points_253']['rx'] }} + {{ $rank['points_253']['scaled'] }})</div>
                 </flux:table.cell>
                 <flux:table.cell align="end">
                     <flux:icon.ellipsis-horizontal variant="solid" class="inline-block text-black/50 dark:text-white/50" />

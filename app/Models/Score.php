@@ -29,6 +29,13 @@ class Score extends Model
             ->when($division, fn($query) => $query->where('division', $division));
     }
 
+    public function scopeRankingOpenWod253($query, $division = false)
+    {
+        return $query
+            ->where('name', 'Open WOD 25.3')
+            ->when($division, fn($query) => $query->where('division', $division));
+    }
+
     public function scopeOpenWod251($query)
     {
         return $query->where('name', 'Open WOD 25.1');
@@ -37,6 +44,11 @@ class Score extends Model
     public function scopeOpenWod252($query)
     {
         return $query->where('name', 'Open WOD 25.2');
+    }
+
+    public function scopeOpenWod253($query)
+    {
+        return $query->where('name', 'Open WOD 25.3');
     }
 
     public function user(): BelongsTo

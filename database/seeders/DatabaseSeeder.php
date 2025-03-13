@@ -27,10 +27,12 @@ class DatabaseSeeder extends Seeder
 
                 $users->each(fn($user) => $this->addScoreFor251($user));
                 $users->each(fn($user) => $this->addScoreFor252($user));
+                $users->each(fn($user) => $this->addScoreFor253($user));
             });
 
         Artisan::call('app:generate-empty-score-for-251');
         Artisan::call('app:generate-empty-score-for-252');
+        Artisan::call('app:generate-empty-score-for-253');
     }
 
     private function createTeams(): Collection
@@ -107,6 +109,24 @@ class DatabaseSeeder extends Seeder
                 'reps' => $finishedWod ? 0 : fake()->numberBetween(1, 215),
                 'time' => $finishedWod ? $time : sprintf('%02d:%02d', fake()->numberBetween(0, 11), fake()->numberBetween(0, 59)),
                 'tiebreak' => sprintf('%02d:%02d', fake()->numberBetween(0, 11), fake()->numberBetween(0, 59)),
+                'type' => 'time-or-reps',
+            ],
+            'division' => fake()->randomElement(['rx', 'scaled']),
+        ]);
+    }
+
+    private function addScoreFor253(User $user): void
+    {
+        $finishedWod = fake()->boolean;
+        $time = sprintf('%02d:%02d', fake()->numberBetween(11, 19), fake()->numberBetween(1, 59));
+
+        $user->scores()->create([
+            'name' => 'Open WOD 25.3',
+            'data' => [
+                'finishedWod' => $finishedWod,
+                'reps' => $finishedWod ? 0 : fake()->numberBetween(1, 199),
+                'time' => $finishedWod ? $time : sprintf('%02d:%02d', fake()->numberBetween(0, 19), fake()->numberBetween(0, 59)),
+                'tiebreak' => sprintf('%02d:%02d', fake()->numberBetween(0, 18), fake()->numberBetween(0, 59)),
                 'type' => 'time-or-reps',
             ],
             'division' => fake()->randomElement(['rx', 'scaled']),

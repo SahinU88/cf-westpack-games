@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 
-class ScoresOpenWod252 extends Component
+class ScoresOpenWod253 extends Component
 {
     public ?Score $scoreObj = null;
 
@@ -27,11 +27,11 @@ class ScoresOpenWod252 extends Component
      */
     public function mount(): void
     {
-        $this->scoreObj = Auth::user()->scores()->openWod252()->first();
+        $this->scoreObj = Auth::user()->scores()->openWod253()->first();
 
         if ($this->scoreObj === null) {
             $this->scoreObj = Auth::user()->scores()->create([
-                'name' => 'Open WOD 25.2',
+                'name' => 'Open WOD 25.3',
                 'data' => [
                     'finishedWod' => false,
                     'reps' => 0,
@@ -57,7 +57,7 @@ class ScoresOpenWod252 extends Component
     {
         $user = Auth::user();
 
-        if (now()->greaterThanOrEqualTo(Carbon::parse('12.03.2025'))) {
+        if (now()->greaterThanOrEqualTo(Carbon::parse('19.03.2025'))) {
             $this->dispatch('score-deadline-passed', name: $user->name);
 
             return;
@@ -81,7 +81,7 @@ class ScoresOpenWod252 extends Component
 
         $user->scores()->updateOrCreate(
             [
-                'name' => 'Open WOD 25.2',
+                'name' => 'Open WOD 25.3',
             ],
             [
                 'data' => [
