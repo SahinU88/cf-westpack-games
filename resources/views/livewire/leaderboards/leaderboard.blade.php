@@ -45,7 +45,7 @@
 
     <flux:callout variant="secondary" icon="information-circle" heading="* Punkteberechnung" class="mt-8">
         <flux:callout.text>
-            Teams mit 13 Athleten haben angepasste Gesamtpunkte, die mit der folgenden Formel berechnet werden: <code class="italic font-semibold">Gesamtpunkte / 12 * 11</code>.
+            Teams mit 13 Athletinnen haben angepasste Gesamtpunkte, die mit der folgenden Formel berechnet werden: <code class="italic font-semibold">Gesamtpunkte / 12 * 11</code>.
         </flux:callout.text>
     </flux:callout>
 
