@@ -51,7 +51,7 @@
 
     <flux:callout color="amber" icon="information-circle" heading="Joker Score" class="mt-8">
         <flux:callout.text>
-            Der schlechteste Score pro Teams wird nicht in die Gesamtpunkte eingerechnet.
+            Der schlechteste Score pro Team wird nicht in die Gesamtpunkte eingerechnet.
         </flux:callout.text>
     </flux:callout>
 </div>
