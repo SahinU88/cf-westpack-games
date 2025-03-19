@@ -43,13 +43,13 @@
         </flux:table.rows>
     </flux:table>
 
-    <flux:callout variant="secondary" icon="information-circle" heading="* Point calculation" class="mt-8">
+    <flux:callout variant="secondary" icon="information-circle" heading="* Punkteberechnung" class="mt-8">
         <flux:callout.text>
             Teams mit 13 Athleten haben angepasste Gesamtpunkte, die mit der folgenden Formel berechnet werden: <code class="italic font-semibold">Gesamtpunkte / 12 * 11</code>.
         </flux:callout.text>
     </flux:callout>
 
-    <flux:callout color="amber" icon="information-circle" heading="Score removal" class="mt-8">
+    <flux:callout color="amber" icon="information-circle" heading="Joker Score" class="mt-8">
         <flux:callout.text>
             Der schlechteste Score pro Teams wird nicht in die Gesamtpunkte eingerechnet.
         </flux:callout.text>
