@@ -20,6 +20,13 @@ class DatabaseSeeder extends Seeder
         $teams = $this->createTeams();
         $teams->each(fn($team) => $this->createTeamMembers($team));
 
+        $teams->take(2)->each(function($team){
+            User::factory()
+                ->for($team)
+                ->has(Profile::factory())
+                ->create();
+        });
+
         $teams
             ->each(fn($team) => $team->load('users'))
             ->each(function($team) {
@@ -79,7 +86,7 @@ class DatabaseSeeder extends Seeder
     private function createTeamMembers(Team $team): void
     {
         User::factory()
-            ->count(9)
+            ->count(11)
             ->for($team)
             ->has(Profile::factory())
             ->create();

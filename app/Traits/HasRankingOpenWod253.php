@@ -13,11 +13,15 @@ trait HasRankingOpenWod253
         $rankingMapScaled = self::individualRankingOpenWod253('scaled');
         $allScores = $rankingMapRx->merge($rankingMapScaled);
 
-        return Team::all()
+        return Team::withCount('users')
+            ->get()
             ->map(function ($team) use ($allScores) {
                 $teamScores = $allScores->where('team.id', $team->id);
                 $teamScoresRx = $teamScores->where('division', 'rx');
                 $teamScoresScaled = $teamScores->where('division', 'scaled');
+
+                // reject worst score pro team
+                $teamScoresScaled = $teamScoresScaled->sortBy('points')->values()->slice(0, $teamScoresScaled->count() - 1);
 
                 return [
                     'team' => $team,
@@ -28,7 +32,9 @@ trait HasRankingOpenWod253
                     'scores_scaled' => [
                         'points' => $teamScoresScaled->sum('points')
                     ],
-                    'total_points' => $teamScores->sum('points')
+                    'total_points' => $team->users_count === 12 ?
+                        $teamScores->sum('points') :
+                        intval(round($teamScores->sum('points') / 12 * 11))
                 ];
             })
             ->sortBy('total_points')
@@ -38,7 +44,7 @@ trait HasRankingOpenWod253
 
     public static function individualRankingOpenWod253($division = false)
     {
-        $allScores =  Score::with(['user', 'user.team'])
+        $allScores = Score::with(['user', 'user.team'])
             ->rankingOpenWod253()
             ->get();
 
