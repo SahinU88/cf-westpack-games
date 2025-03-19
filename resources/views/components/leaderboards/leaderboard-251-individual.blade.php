@@ -17,7 +17,7 @@
             @foreach ($rankings as $rank)
                 <flux:table.row>
                     <flux:table.cell variant="strong">
-                        #{{ $rank['points'] }}
+                        #{{ $rank['rank'] }}
                     </flux:table.cell>
                     <flux:table.cell>
                         <span>{{ $rank['user']->name }}</span>

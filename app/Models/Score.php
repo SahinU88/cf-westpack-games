@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-use App\Traits\HasRanking;
+use App\Traits\HasRankingOpenWod251;
+use App\Traits\HasRankingOpenWod252;
+use App\Traits\HasRankingOpenWod253;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Score extends Model
 {
-    use HasRanking;
+    use HasRankingOpenWod251, HasRankingOpenWod252, HasRankingOpenWod253;
 
     protected $casts = [
         'data' => 'array',
