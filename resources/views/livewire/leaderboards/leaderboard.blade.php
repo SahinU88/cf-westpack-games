@@ -6,7 +6,7 @@
             <flux:table.column align="right">25.1</flux:table.column>
             <flux:table.column align="right">25.2</flux:table.column>
             <flux:table.column align="right">25.3</flux:table.column>
-            <flux:table.column align="right">Bonus WOD</flux:table.column>
+            <flux:table.column align="right">25.4</flux:table.column>
             <flux:table.column align="right">Total</flux:table.column>
         </flux:table.columns>
 
@@ -33,7 +33,8 @@
                         <div class="mt-1 text-black/50 dark:text-white/50">({{ $rank['points_253']['rx'] }} + {{ $rank['points_253']['scaled'] }})</div>
                     </flux:table.cell>
                     <flux:table.cell align="end">
-                        <flux:icon.ellipsis-horizontal variant="solid" class="inline-block text-black/50 dark:text-white/50" />
+                        <div>{{ $rank['points_254']['total'] }}</div>
+                        <div class="mt-1 text-black/50 dark:text-white/50">({{ $rank['points_254']['rx'] }} + {{ $rank['points_254']['scaled'] }})</div>
                     </flux:table.cell>
                     <flux:table.cell align="end" variant="strong">
                         {{ $rank['total_points'] }}

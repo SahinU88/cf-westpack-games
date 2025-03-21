@@ -32,8 +32,8 @@
                     {{ __('25.3') }}
                 </flux:navbar.item>
 
-                <flux:navbar.item href="#" wire:navigate>
-                    {{ __('Bonus WOD') }}
+                <flux:navbar.item :href="route('leaderboards.25.4')" :current="request()->routeIs('leaderboards.25.4')" wire:navigate>
+                    {{ __('Bonus WOD 25.4') }}
                 </flux:navbar.item>
             </flux:navbar>
 
@@ -129,8 +129,8 @@
                         {{ __('25.3') }}
                     </flux:navlist.item>
 
-                    <flux:navlist.item icon="bolt-slash" href="#" wire:navigate>
-                        {{ __('Bonus WOD') }}
+                    <flux:navlist.item icon="bolt" :href="route('leaderboards.25.4')" :current="request()->routeIs('leaderboards.25.4')" wire:navigate>
+                        {{ __('Bonus WOD 25.4') }}
                     </flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>

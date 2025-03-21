@@ -15,11 +15,15 @@ class ScoreCards extends Component
 
     public Score $score253;
 
+    public Score $score254;
+
     public array $rankingOpenWod251;
 
     public array $rankingOpenWod252;
 
     public array $rankingOpenWod253;
+
+    public array $rankingOpenWod254;
 
 
     public function mount(): void
@@ -29,6 +33,7 @@ class ScoreCards extends Component
         $this->score251 = $this->getScoreFor251($user);
         $this->score252 = $this->getScoreFor252($user);
         $this->score253 = $this->getScoreFor253($user);
+        $this->score254 = $this->getScoreFor254($user);
 
         $this->rankingOpenWod251 = Score::individualRankingOpenWod251($this->score251->division)
             ->where('user.id', $user->id)
@@ -39,6 +44,10 @@ class ScoreCards extends Component
             ->first();
 
         $this->rankingOpenWod253 = Score::individualRankingOpenWod253($this->score253->division)
+            ->where('user.id', $user->id)
+            ->first();
+
+        $this->rankingOpenWod254 = Score::individualRankingOpenWod254($this->score254->division)
             ->where('user.id', $user->id)
             ->first();
     }
@@ -98,6 +107,26 @@ class ScoreCards extends Component
                     'time' => '00:00',
                     'tiebreak' => '00:00',
                     'type' => 'time-or-reps',
+                ],
+                'division' => '',
+            ]);
+        }
+
+        return $score;
+    }
+
+    private function getScoreFor254(User $user): Score
+    {
+        $score = $user->scores()->openWod254()->first();
+
+        if ($score === null)
+        {
+            $score = $user->scores()->create([
+                'name' => 'Bonus WOD 25.4',
+                'data' => [
+                    'reps' => 0,
+                    'tiebreak' => '00:00',
+                    'type' => 'reps-with-tiebreak',
                 ],
                 'division' => '',
             ]);

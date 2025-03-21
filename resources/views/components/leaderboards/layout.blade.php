@@ -4,6 +4,7 @@
             <flux:navlist.item :href="route('leaderboards.25.1')" :current="request()->routeIs('leaderboards.25.1')" wire:navigate>{{ __('25.1') }}</flux:navlist.item>
             <flux:navlist.item :href="route('leaderboards.25.2')" :current="request()->routeIs('leaderboards.25.2')" wire:navigate>{{ __('25.2') }}</flux:navlist.item>
             <flux:navlist.item :href="route('leaderboards.25.3')" :current="request()->routeIs('leaderboards.25.3')" wire:navigate>{{ __('25.3') }}</flux:navlist.item>
+            <flux:navlist.item :href="route('leaderboards.25.4')" :current="request()->routeIs('leaderboards.25.4')" wire:navigate>{{ __('25.4') }}</flux:navlist.item>
             <flux:separator class="my-2" />
             <flux:navlist.item :href="route('dashboard')" icon="arrow-uturn-left" wire:navigate>Dashboard</flux:navlist.item>
         </flux:navlist>

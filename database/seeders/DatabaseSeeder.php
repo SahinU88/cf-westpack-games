@@ -35,11 +35,13 @@ class DatabaseSeeder extends Seeder
                 $users->each(fn($user) => $this->addScoreFor251($user));
                 $users->each(fn($user) => $this->addScoreFor252($user));
                 $users->each(fn($user) => $this->addScoreFor253($user));
+                $users->each(fn($user) => $this->addScoreFor254($user));
             });
 
         Artisan::call('app:generate-empty-score-for-251');
         Artisan::call('app:generate-empty-score-for-252');
         Artisan::call('app:generate-empty-score-for-253');
+        Artisan::call('app:generate-empty-score-for-254');
     }
 
     private function createTeams(): Collection
@@ -135,6 +137,19 @@ class DatabaseSeeder extends Seeder
                 'time' => $finishedWod ? $time : sprintf('%02d:%02d', fake()->numberBetween(0, 19), fake()->numberBetween(0, 59)),
                 'tiebreak' => sprintf('%02d:%02d', fake()->numberBetween(0, 18), fake()->numberBetween(0, 59)),
                 'type' => 'time-or-reps',
+            ],
+            'division' => fake()->randomElement(['rx', 'scaled']),
+        ]);
+    }
+
+    private function addScoreFor254(User $user): void
+    {
+        $user->scores()->create([
+            'name' => 'Bonus WOD 25.4',
+            'data' => [
+                'reps' => fake()->numberBetween(1, 199),
+                'tiebreak' => sprintf('%02d:%02d', fake()->numberBetween(0, 1), fake()->numberBetween(0, 59)),
+                'type' => 'reps-with-tiebreak',
             ],
             'division' => fake()->randomElement(['rx', 'scaled']),
         ]);
